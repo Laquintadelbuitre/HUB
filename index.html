@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Cellule U13">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Cellule U13 — Boîte à outils</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch-dark:#0c3527;
+    --pitch-mid:#134a37;
+    --pitch-line:rgba(255,255,255,0.08);
+    --chalk:#f4f6f1;
+    --chalk-dim:rgba(244,246,241,0.58);
+    --gold:#d8ab55;
+    --row-bg:rgba(255,255,255,0.045);
+    --row-bg-active:rgba(255,255,255,0.09);
+    --row-border:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    background:
+      repeating-linear-gradient(
+        150deg,
+        var(--pitch-dark) 0px,
+        var(--pitch-dark) 46px,
+        var(--pitch-mid) 46px,
+        var(--pitch-mid) 92px
+      );
+    color:var(--chalk);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:env(safe-area-inset-bottom, 24px);
+  }
+  .wrap{
+    max-width:480px;
+    margin:0 auto;
+    padding:0 16px 32px;
+  }
+  header{
+    padding:22px 4px 18px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    letter-spacing:0.22em;
+    font-size:10.5px;
+    color:var(--gold);
+    text-transform:uppercase;
+    display:inline-block;
+    padding:4px 11px;
+    border:1px solid rgba(216,171,85,0.4);
+    border-radius:999px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:30px;
+    letter-spacing:0.005em;
+    text-transform:uppercase;
+    margin:13px 0 5px;
+    line-height:1.05;
+  }
+  .subtitle{
+    color:var(--chalk-dim);
+    font-size:13px;
+  }
+
+  /* Featured */
+  .featured{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    background:linear-gradient(120deg, rgba(216,171,85,0.16), rgba(255,255,255,0.03));
+    border:1px solid rgba(216,171,85,0.4);
+    border-radius:16px;
+    padding:13px 14px;
+    text-decoration:none;
+    color:var(--chalk);
+    margin:6px 0 26px;
+  }
+  .featured:active{ background:linear-gradient(120deg, rgba(216,171,85,0.24), rgba(255,255,255,0.05)); }
+  .featured .badge{ width:46px; height:46px; flex-shrink:0; border-width:2px; }
+  .featured .badge svg{ width:21px; height:21px; }
+  .featured-text{ flex:1; min-width:0; }
+  .featured-text .eyebrow-small{
+    font-family:'Oswald', sans-serif;
+    font-size:10px;
+    letter-spacing:0.15em;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
+  .featured-text .name{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:1px;
+  }
+  .featured-text .sub{ font-size:12px; color:var(--chalk-dim); margin-top:1px; }
+  .chevron{ flex-shrink:0; opacity:0.5; }
+  .chevron svg{ width:16px; height:16px; stroke:var(--chalk); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* Theme groups */
+  section.theme{ margin-bottom:26px; }
+  .theme-head{ padding:0 4px 8px; }
+  .theme-head h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0;
+  }
+  .theme-desc{ font-size:11.5px; color:var(--chalk-dim); margin-top:2px; }
+
+  .list{
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--row-border);
+  }
+  .tool{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    text-decoration:none;
+    color:var(--chalk);
+    background:var(--row-bg);
+    padding:11px 14px;
+    min-height:60px;
+    border-bottom:1px solid var(--row-border);
+  }
+  .list .tool:last-child{ border-bottom:none; }
+  .tool:active{ background:var(--row-bg-active); }
+
+  .badge{
+    width:42px; height:42px;
+    border-radius:50%;
+    border:2px dashed var(--badge-color);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .badge svg{ width:19px; height:19px; stroke:#fff; fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+
+  .tool-text{ flex:1; min-width:0; }
+  .tool-text .name{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.005em;
+    color:var(--badge-color);
+    text-transform:uppercase;
+    line-height:1.2;
+  }
+  .tool-text .sub{
+    font-size:11.5px;
+    color:var(--chalk-dim);
+    margin-top:2px;
+    line-height:1.2;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  footer{
+    margin-top:8px;
+    padding:14px 4px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    color:var(--chalk-dim);
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">Cellule Jeunes Pro · U13</span>
+    <h1>Boîte à outils</h1>
+    <div class="subtitle">Limoges Football — 2026/2027</div>
+  </header>
+
+  <a class="featured" style="--badge-color:#8a68c9" href="https://laquintadelbuitre.github.io/tableau-de-bord/">
+    <span class="badge"><svg viewBox="0 0 24 24"><rect x="4" y="12" width="4" height="8" rx="0.8"/><rect x="10" y="7" width="4" height="13" rx="0.8"/><rect x="16" y="4" width="4" height="16" rx="0.8"/></svg></span>
+    <span class="featured-text">
+      <span class="eyebrow-small">Point d'entrée</span>
+      <span class="name">Tableau de bord</span>
+      <span class="sub">La vue d'ensemble de la cellule</span>
+    </span>
+    <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <section class="theme">
+    <div class="theme-head">
+      <h2>Organisation &amp; communication</h2>
+      <div class="theme-desc">Vers les parents — planning et convocations</div>
+    </div>
+    <div class="list">
+      <a class="tool" style="--badge-color:#d69a34" href="https://laquintadelbuitre.github.io/previsionnel-du-mois/">
+        <span class="badge"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.6"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><circle cx="8" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg></span>
+        <span class="tool-text"><span class="name">Prévisionnel du mois</span><span class="sub">Planning des matchs</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" style="--badge-color:#5266c9" href="https://laquintadelbuitre.github.io/convoc-LF/">
+        <span class="badge"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><path d="M4 6.5l8 6.5 8-6.5"/></svg></span>
+        <span class="tool-text"><span class="name">Convocations</span><span class="sub">Convoc' joueurs</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="theme">
+    <div class="theme-head">
+      <h2>Jour de match</h2>
+      <div class="theme-desc">Composition, bilan pré-match et temps de jeu</div>
+    </div>
+    <div class="list">
+      <a class="tool" style="--badge-color:#3aa6a0" href="https://laquintadelbuitre.github.io/Jourdematch/">
+        <span class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l3 3 3-3M9 15l3-3 3 3"/></svg></span>
+        <span class="tool-text"><span class="name">Gestion des matchs</span><span class="sub">Compo &amp; score en direct</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" style="--badge-color:#4c9a5b" href="https://laquintadelbuitre.github.io/matchday-lf/">
+        <span class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 6.5l3 2.2-1.1 3.6h-3.8L9 8.7z"/><path d="M12 3.5v3M12 17v3.5M4.8 8l2.6 1.9M16.6 9.9L19.2 8M6 16l2.6-1.9M15.4 14.1L18 16"/></svg></span>
+        <span class="tool-text"><span class="name">Match Day</span><span class="sub">Bilan avant-match</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" style="--badge-color:#2e9bb0" href="https://laquintadelbuitre.github.io/rotation-joueurs/">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg></span>
+        <span class="tool-text"><span class="name">Rotation joueurs</span><span class="sub">Temps de jeu</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="theme">
+    <div class="theme-head">
+      <h2>Santé &amp; charge</h2>
+      <div class="theme-desc">Suivi de la charge et prévention des blessures</div>
+    </div>
+    <div class="list">
+      <a class="tool" style="--badge-color:#c4573f" href="https://laquintadelbuitre.github.io/rpe-seance/">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M12.5 20.2c-4-3-8-6.4-8-10.6a4.9 4.9 0 0 1 8.9-2.8A4.9 4.9 0 0 1 22 9.6c0 1.5-.6 2.9-1.5 4.1"/><path d="M2 13h3l1.6-3.2L9 15l1.8-4.6L12 13h2"/></svg></span>
+        <span class="tool-text"><span class="name">RPE Séance</span><span class="sub">Charge d'entraînement</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" style="--badge-color:#b3395b" href="https://laquintadelbuitre.github.io/Suivi-Blessures/">
+        <span class="badge"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="6" rx="2.2" transform="rotate(-8 12 12)"/><path d="M9.3 10.4l-1 5.3M14.7 8.8l-1 5.3"/></svg></span>
+        <span class="tool-text"><span class="name">Suivi Blessures</span><span class="sub">Zones &amp; durées</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="theme">
+    <div class="theme-head">
+      <h2>Performance technique</h2>
+      <div class="theme-desc">Progression individuelle au fil de la saison</div>
+    </div>
+    <div class="list">
+      <a class="tool" style="--badge-color:#3b6fb6" href="https://laquintadelbuitre.github.io/tests-U13/">
+        <span class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 8v5l3.5 2"/><path d="M10 2h4M12 5V2"/></svg></span>
+        <span class="tool-text"><span class="name">Tests U13</span><span class="sub">Suivi performance</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" style="--badge-color:#dd7a2e" href="https://laquintadelbuitre.github.io/Jonglerie-Suivi-Saison/">
+        <span class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="2.6"/><path d="M6 20c1.2-3.4 3.2-5.2 6-5.2s4.8 1.8 6 5.2M3.5 12.5c.9-.6 1.7-.6 2.5 0M18 12.5c.9-.6 1.7-.6 2.5 0"/></svg></span>
+        <span class="tool-text"><span class="name">Suivi Jonglerie</span><span class="sub">Progression technique</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <footer>Outils internes · Cellule Jeunes Pro U13 · Limoges Football</footer>
+
+</div>
+</body>
+</html>
