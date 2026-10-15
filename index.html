@@ -136,6 +136,7 @@
   .chevron{ flex-shrink:0; opacity:0.45; }
   .chevron svg{ width:16px; height:16px; stroke:var(--paper); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
+  [hidden]{ display:none !important; }
   section.theme{ margin-bottom:24px; }
   .theme-head{ padding:0 4px 9px; display:flex; align-items:baseline; gap:8px; }
   .theme-head .swatch{ width:7px; height:7px; border-radius:2px; flex-shrink:0; }
@@ -218,8 +219,8 @@
   </a>
 
   <section class="theme" style="--group-color:var(--accent-org)">
-    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Organisation &amp; communication</h2></div>
-    <div class="theme-desc">Vers les parents — planning et convocations</div>
+    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Planning &amp; communication</h2></div>
+    <div class="theme-desc">Calendrier, convocations et démarches</div>
     <div class="list">
       <a class="tool" href="https://laquintadelbuitre.github.io/previsionnel-du-mois/">
         <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.6"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><circle cx="8" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg></span>
@@ -236,31 +237,21 @@
         <span class="tool-text"><span class="name">Suivi des Demandes</span><span class="sub">Demandes &amp; échéances</span></span>
         <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="tool" href="https://laquintadelbuitre.github.io/Objectifs/">
-        <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="4" y="13" width="4" height="7" rx="0.8"/><rect x="10" y="8" width="4" height="12" rx="0.8"/><rect x="16" y="4" width="4" height="16" rx="0.8"/><path d="M4 4h16"/></svg></span>
-        <span class="tool-text"><span class="name">Cap sur le Sénégal</span><span class="sub">Cagnotte voyage U13</span></span>
-        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="tool" href="https://laquintadelbuitre.github.io/carnet-de-deplacement/">
-        <span class="chip-sm"><svg viewBox="0 0 24 24"><path d="M12 21s-6.500-5.800-6.500-11a6.500 6.500 0 0 1 13 0c0 5.200-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.300"/></svg></span>
-        <span class="tool-text"><span class="name">Carnet de déplacement</span><span class="sub">Trajets, hébergement &amp; budget</span></span>
-        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-      </a>
     </div>
   </section>
 
   <section class="theme" style="--group-color:var(--accent-train)">
-    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Entraînement</h2></div>
-    <div class="theme-desc">Préparer le contenu des séances</div>
+    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Séances &amp; tactique</h2></div>
+    <div class="theme-desc">Préparer l'entraînement et les schémas</div>
     <div class="list">
       <a class="tool" href="https://laquintadelbuitre.github.io/groupes-entrainement/">
         <span class="chip-sm"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2.4"/><circle cx="17" cy="8" r="2.4"/><circle cx="12" cy="17" r="2.4"/><path d="M8.7 9.8L10.7 15M15.3 9.8L13.3 15M9.3 8h5.4"/></svg></span>
         <span class="tool-text"><span class="name">Groupes Entraînement</span><span class="sub">Groupes de la semaine</span></span>
         <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="tool" href="https://laquintadelbuitre.github.io/Cagnotte-JurerpourR/">
-        <span class="chip-sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v5M12 16.2v.1"/></svg></span>
-        <span class="tool-text"><span class="name">Parlons sans jurer</span><span class="sub">Cagnotte des amendes</span></span>
+      <a class="tool" href="https://laquintadelbuitre.github.io/tableau-noir/">
+        <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 14l4-6 3 4 3-3"/></svg></span>
+        <span class="tool-text"><span class="name">Tableau Tactique</span><span class="sub">Schémas &amp; animations</span></span>
         <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
     </div>
@@ -268,7 +259,7 @@
 
   <section class="theme" style="--group-color:var(--accent-match)">
     <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Jour de match</h2></div>
-    <div class="theme-desc">Composition et temps de jeu</div>
+    <div class="theme-desc">Composition, temps de jeu et règlement</div>
     <div class="list">
       <a class="tool" href="https://laquintadelbuitre.github.io/Jourdematch/">
         <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="2.5" y="10.5" width="8" height="5" rx="2.5"/><circle cx="16" cy="13" r="5.5"/><circle cx="16" cy="13" r="1.3"/></svg></span>
@@ -285,17 +276,12 @@
         <span class="tool-text"><span class="name">Suivi Article 5.8</span><span class="sub">Règles de participation</span></span>
         <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="tool" href="https://laquintadelbuitre.github.io/tableau-noir/">
-        <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 14l4-6 3 4 3-3"/></svg></span>
-        <span class="tool-text"><span class="name">Tableau Tactique</span><span class="sub">Schémas &amp; animations</span></span>
-        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-      </a>
     </div>
   </section>
 
   <section class="theme" style="--group-color:var(--accent-health)">
-    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Santé &amp; charge</h2></div>
-    <div class="theme-desc">Bien-être, charge et prévention des blessures</div>
+    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Santé &amp; forme</h2></div>
+    <div class="theme-desc">Bien-être, charge et blessures</div>
     <div class="list">
       <a class="tool" href="https://laquintadelbuitre.github.io/matchday-lf/">
         <span class="chip-sm"><svg viewBox="0 0 24 24"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16L16 9"/><circle cx="12" cy="16" r="1.3"/></svg></span>
@@ -316,8 +302,8 @@
   </section>
 
   <section class="theme" style="--group-color:var(--accent-perf)">
-    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Performance technique</h2></div>
-    <div class="theme-desc">Progression individuelle au fil de la saison</div>
+    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Progression des joueurs</h2></div>
+    <div class="theme-desc">Tests, évaluations et technique</div>
     <div class="list">
       <a class="tool" href="https://laquintadelbuitre.github.io/tests-U13/">
         <span class="chip-sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 8v5l3.5 2"/><path d="M10 2h4M12 5V2"/></svg></span>
@@ -337,19 +323,41 @@
     </div>
   </section>
 
+  <section class="theme" style="--group-color:var(--accent-hero)">
+    <div class="theme-head"><span class="swatch" style="background:var(--group-color)"></span><h2>Vie de groupe &amp; voyage</h2></div>
+    <div class="theme-desc">Cagnottes et organisation du déplacement</div>
+    <div class="list">
+      <a class="tool" href="https://laquintadelbuitre.github.io/Cagnotte-JurerpourR/">
+        <span class="chip-sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v5M12 16.2v.1"/></svg></span>
+        <span class="tool-text"><span class="name">Parlons sans jurer</span><span class="sub">Cagnotte des amendes</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" href="https://laquintadelbuitre.github.io/Objectifs/">
+        <span class="chip-sm"><svg viewBox="0 0 24 24"><rect x="4" y="13" width="4" height="7" rx="0.8"/><rect x="10" y="8" width="4" height="12" rx="0.8"/><rect x="16" y="4" width="4" height="16" rx="0.8"/><path d="M4 4h16"/></svg></span>
+        <span class="tool-text"><span class="name">Cap sur le Sénégal</span><span class="sub">Cagnotte voyage U13</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="tool" href="https://laquintadelbuitre.github.io/carnet-de-deplacement/">
+        <span class="chip-sm"><svg viewBox="0 0 24 24"><path d="M12 21s-6.500-5.800-6.500-11a6.500 6.500 0 0 1 13 0c0 5.200-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.300"/></svg></span>
+        <span class="tool-text"><span class="name">Carnet de déplacement</span><span class="sub">Trajets, hébergement &amp; budget</span></span>
+        <span class="chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
   <footer>Outils internes · U13 Génération 2014 · Limoges Football</footer>
 
 </div>
 <script>
-  document.querySelectorAll('.tool, .featured').forEach(function(el){
-    el.addEventListener('touchstart', function(){
-      var chip = el.querySelector('.chip-sm, .chip');
-      if(!chip) return;
-      chip.classList.remove('tap-spin');
-      void chip.offsetWidth;
-      chip.classList.add('tap-spin');
-    }, {passive:true});
-  });
+  document.addEventListener('touchstart', function(e){
+    var el = e.target.closest && e.target.closest('.tool, .featured');
+    if(!el) return;
+    var chip = el.querySelector('.chip-sm, .chip');
+    if(!chip) return;
+    chip.classList.remove('tap-spin');
+    void chip.offsetWidth;
+    chip.classList.add('tap-spin');
+  }, {passive:true});
 </script>
 </body>
 </html>
